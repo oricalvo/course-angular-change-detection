@@ -1,0 +1,19 @@
+{
+  "name": "@cdr/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b tsconfig.json --pretty false",
+    "rebuild": "tsc -b tsconfig.json -f --pretty false"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@angular/core": "^19.0.0",
+    "@types/express": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "typescript": "~5.6.2"
+  }
+}

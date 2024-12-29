@@ -1,0 +1,13 @@
+<h1>App</h1>
+
+<button (click)="run()">Run</button>
+<button (click)="refresh()">Refresh</button>
+
+<ul>
+  @for (contact of contacts; track contact.id) {
+    <li>
+      <span>{{contact.id}}</span>
+      <span>{{contact.name}}</span>
+    </li>
+  }
+</ul>

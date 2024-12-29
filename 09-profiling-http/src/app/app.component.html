@@ -1,0 +1,15 @@
+<h1>App</h1>
+
+<div>{{ store.counter }}</div>
+
+<ul>
+  @for(contact of store.contacts; track contact.id) {
+    <li>
+      <span>{{contact.id}}</span>
+      <span>{{contact.name}}</span>
+    </li>
+  }
+</ul>
+
+<button (click)="load()">Load</button>
+

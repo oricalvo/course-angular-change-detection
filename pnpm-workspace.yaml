@@ -1,0 +1,19 @@
+packages:
+    - common
+    - server
+    - 00-starter
+    - 01-inc-counter
+    - 02-proxy
+    - 03-vue
+    - 04-react-app
+    - 05-post-click
+    - 06-zonejs
+    - 07-event-coalescing
+    - 08-profiling-tick
+    - 09-profiling-http
+    - 10-zoneless
+    - 11-zoneless-cdr
+    - 12-zoneless-dispatch
+    - 13-redux
+    - 14-zoneless-immutable-store
+    - 15-measure-change-detection

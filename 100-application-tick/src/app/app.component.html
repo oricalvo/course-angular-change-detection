@@ -1,0 +1,13 @@
+<h1>App</h1>
+
+<span>{{counter}}</span><button (click)="inc()">Inc</button>
+
+<ul>
+  @for(contact of contacts; track contact.id)
+  {
+    <li>
+      <span>{{contact.id}}</span>
+      <span>{{contact.name}}</span>
+    </li>
+  }
+</ul>

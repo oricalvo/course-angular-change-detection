@@ -1,0 +1,11 @@
+<h1>App</h1>
+
+<div>Counter: {{ store.counter }}</div>
+<div>Contacts: {{store.contacts?.length}}</div>
+
+<button (click)="inc()">Inc</button>
+<button (click)="load()">Load</button>
+
+<div>
+  <app-counter></app-counter>
+</div>
