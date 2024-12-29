@@ -1,0 +1,22 @@
+- Interesting dump component scenario
+Often in UIs, there’s a need for mutable state that still tracks some higher level state. For example, a selection UI has a “current selection” state which changes as the user makes selections, but also needs to reset if the list of options changes.
+
+- Check how that can be demonstrated
+If you are using observables extensively, the binding count may not accurately represent the number of change detection cycles.
+
+performance improvements
+- Zone pollution: Unneeded change detection when interacting with non angular components --> run outside of zone
+- Out of bound check detection: A change in one component triggers a change in another one --> move to OnPush
+- Out of bound check detection: input and keydown events bypass OnPush strategy
+    Refactor component tree, sho input and keydown events are not propagated to the heavy component
+- Recalculation of referentially transparent expressions: Angular re-run each method in the template although the inputs of the method did not change
+    Replace method with pure pipe or cache it and remove calc
+    Memoization can cache results for multiple different inputs (while pipe only caches last)
+- Large component tree --> Use pagination or virtualization
+- Don't use lifecycle hooks
+- Avoid repaint/reflow in lifecycle hook - Certain operations cause the browser to either synchronously recalculate the layout of the page or re-render it
+- Forced synchronous layouts: changing class name and retrieving height might causes forced sync re-layout
+    Batch all styles changes and ask for the height at the end
+- Avoid layout thrashing: read and write layout properties (like height) in a loop
+    Read at the begining each DOM element property into a variable and use it in the loop
+
