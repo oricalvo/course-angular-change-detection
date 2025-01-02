@@ -3,25 +3,6 @@ import {ApplicationRef, inject} from '@angular/core';
 import {HttpEvent, HttpEventType, HttpHandlerFn, HttpRequest} from '@angular/common/http';
 import {Observable, tap} from 'rxjs';
 
-export function createIncButton(caller: string) {
-  console.log("createIncButton", caller, "IsNgZone=" + isRunningUnderNgZone());
-
-  const button = document.createElement("button");
-  button.textContent = caller;
-  document.documentElement.prepend(button);
-  button.addEventListener("click", () => {
-    store.counter++;
-  })
-
-  return button;
-}
-
-declare const Zone: any;
-
-function isRunningUnderNgZone() {
-  return Zone.current.name === "angular";
-}
-
 export function profileTick() {
   const appRef: any = inject(ApplicationRef);
 
@@ -89,4 +70,8 @@ export function profileHttp() {
       }
     }));
   }
+}
+
+export function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

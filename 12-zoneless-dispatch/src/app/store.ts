@@ -23,7 +23,7 @@ export function getStore() {
   return store;
 }
 
-export function provideDispatcher() {
+export function provideUpdateStore() {
   return {
     provide: UpdateStoreToken,
     deps: [ApplicationRef],

@@ -1,0 +1,12 @@
+<span class="id">{{ id }}</span>
+<button (click)="run()">Click</button>
+<button (click)="deatch()">Deatch</button>
+<span class="checked"></span>
+
+<div>
+  @if (level >= 0) {
+    <app-panel></app-panel>
+  } @else {
+    <app-button>Inc</app-button>
+  }
+</div>

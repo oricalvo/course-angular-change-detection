@@ -7,13 +7,24 @@ packages:
     - 03-vue
     - 04-react-app
     - 05-post-click
-    - 06-zonejs
-    - 07-event-coalescing
-    - 08-profiling-tick
-    - 09-profiling-http
+    - 06a-zonejs-check-setTimeout
+    - 06b-money-patch-appref-tick
+    - 06c-zonejs-button-in-different-contexts
+    - 07-profiling-tick
+    - 08-event-coalescing
+    - 09a-http-coalescing
+    - 09b-profiling-http
     - 10-zoneless
     - 11-zoneless-cdr
     - 12-zoneless-dispatch
     - 13-redux
     - 14-zoneless-immutable-store
     - 15-measure-change-detection
+    - 16-component-mini-profiler
+    - 17-detached-component
+    - 18-input-event-trigger-change-detection
+    - 18a-onpush-is-ignored
+    - 19-method-is-always-invoked
+    - 20-track-by
+    - 21-virtual-scroll
+    

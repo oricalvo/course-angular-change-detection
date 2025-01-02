@@ -1,0 +1,14 @@
+<h1>App</h1>
+
+<button (click)="run()">Click me</button>
+
+<!--<div class="contacts">-->
+<!--  @for(contact of contacts; track $index)-->
+<!--  {-->
+<!--    <app-contact [contact]="contact"></app-contact>-->
+<!--  }-->
+<!--</div>-->
+
+<cdk-virtual-scroll-viewport itemSize="50" class="contacts">
+      <app-contact *cdkVirtualFor="let contact of contacts" [contact]="contact"></app-contact>
+</cdk-virtual-scroll-viewport>

@@ -1,0 +1,10 @@
+<button (click)="detach()">Detach</button>
+<button (click)="attach()">Attach</button>
+<button (click)="detect()">Detect</button>
+<button (click)="mark()">Mark</button>
+
+@for(contact of contacts; track contact.id)
+{
+  <app-contact [contact]="contact"></app-contact>
+}
+

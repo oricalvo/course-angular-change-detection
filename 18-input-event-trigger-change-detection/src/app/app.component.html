@@ -1,0 +1,12 @@
+<h1>App</h1>
+
+<div>
+  <input [(ngModel)]="filter" (ngModelChange)="filterChanged()" (keydown)="onKeyDown()">
+</div>
+
+@for(contact of filteredContacts; track contact.id)
+{
+  <app-contact [contact]="contact"></app-contact>
+}
+
+<!--<app-contact-list [contacts]="contacts" [filter]="filter.trim()"></app-contact-list>-->

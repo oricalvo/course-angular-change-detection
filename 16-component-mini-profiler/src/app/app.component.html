@@ -1,0 +1,9 @@
+<h1>App</h1>
+
+<button (click)="prev()">Prev</button>
+<button (click)="next()">Next</button>
+
+@for(contact of contacts; track contact.id)
+{
+  <app-contact [contact]="contact"></app-contact>
+}

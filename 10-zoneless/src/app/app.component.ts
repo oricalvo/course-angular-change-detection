@@ -1,7 +1,8 @@
-import {ChangeDetectorRef, Component, inject} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Contact, Dispatcher, store} from './store';
 import {HttpClient} from '@angular/common/http';
 import {CounterComponent} from './counter/counter.component';
+import {delay} from './common';
 
 @Component({
   selector: 'app-root',
@@ -12,24 +13,24 @@ import {CounterComponent} from './counter/counter.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  dispatch = inject(Dispatcher);
-
-  constructor(private httpClient: HttpClient, public cdr: ChangeDetectorRef) {
+  constructor(private httpClient: HttpClient) {
   }
 
   get store() {
     return store;
   }
 
-  inc() {
-    console.log("inc");
+  syncInc() {
+    store.counter++;
+  }
+
+  async asyncInc() {
+    await delay(1000);
 
     store.counter++;
   }
 
-  load() {
-    this.dispatch(async () => {
-      store.contacts = await this.httpClient.get<Contact[]>("http://localhost:4000/contact").toPromise();
-    });
+  async load() {
+    store.contacts = await this.httpClient.get<Contact[]>("http://localhost:4000/contact").toPromise();
   }
 }

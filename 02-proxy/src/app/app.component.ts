@@ -8,6 +8,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  contact!: Contact;
+
+  create() {
+    this.contact = createContact();
+  }
+
+  update() {
+    this.contact.name = "XXX";
+  }
 }
 
 interface Contact {
@@ -37,6 +46,6 @@ function createContact(): Contact {
   return new Proxy(target, handler);
 }
 
-const alice = createContact();
-alice.name;
-alice.age = 35;
+// const alice = createContact();
+// alice.name;
+// alice.age = 35;
